@@ -35,6 +35,6 @@ runs:
         pip3 install -U setuptools
         pip3 install slackclient
         export SLACK_TOKEN=${{ inputs.slack-token }}
-        export SLACK_CHANNEL_NUCLEI=${{ inputs.slack-channel }}
+        export SLACK_CHANNEL=${{ inputs.slack-channel }}
         cat output.txt | python3 appsec-etl/transform/nuclei.py | python3 appsec-etl/load/toslack.py
       shell: bash
