@@ -9,11 +9,11 @@ inputs:
   slack-token:
     description: "Slack token"
     required: true
-    default: ${{ secrets.SLACK_TOKEN }}
+    default: ""
   slack-channel:
     description: "Slack channel"
     required: true
-    default: ${{ secrets.SLACK_CHANNEL_NUCLEI }}
+    default: ""
 
 outputs:
   random-number:
