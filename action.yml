@@ -21,5 +21,6 @@ runs:
   using: "composite"
   steps:
     - run: |
-        echo ${{ inputs.urls-txt }}
+        ls -la /home/runner/work/_temp_/
+        ls -la /home/runner/work/_temp_/_github_home/
       shell: bash
