@@ -39,7 +39,7 @@ runs:
           -t nuclei-templates/security-misconfiguration/ \
           -t nuclei-templates/subdomain-takeover/ \
           -t nuclei-templates/vulnerabilities/ \
-          -o output.txt
+          -o ${{ github.action_path }}/output.txt
       shell: bash
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
