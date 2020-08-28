@@ -24,5 +24,9 @@ runs:
     - run: |
         ls -la ${{ github.action_path }}
         ls -la ${{ github.action_path }}/..
+        ls -la ${{ github.action_path }}/../..
+        ls -la ${{ github.action_path }}/../../..
+        ls -la ${{ github.action_path }}/../../../..
         pwd
+        ncat --help
       shell: bash
