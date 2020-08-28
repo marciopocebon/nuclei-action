@@ -9,11 +9,9 @@ inputs:
   slack-token:
     description: "Slack token"
     required: true
-    default: ""
   slack-channel:
     description: "Slack channel"
     required: true
-    default: ""
 
 outputs:
   random-number:
@@ -26,6 +24,8 @@ runs:
     - run: GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
       shell: bash
     - run: |
+        pwd
+        echo ${{ github.action_path }}
         $HOME/go/bin/nuclei -l ${{ inputs.urls-txt }} \
           -json \
           -update-directory . \
