@@ -20,6 +20,24 @@ outputs:
 runs:
   using: "composite"
   steps:
+    - run: GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+      shell: bash
     - run: |
-        cat ~/URLs.txt
+        $HOME/go/bin/nuclei -l ${{ inputs.urls-txt }} \
+          -json \
+          -update-directory . \
+          -update-templates \
+          -t nuclei-templates/cves/ \
+          -t nuclei-templates/files/ \
+          -t nuclei-templates/security-misconfiguration/ \
+          -t nuclei-templates/subdomain-takeover/ \
+          -t nuclei-templates/vulnerabilities/ \
+          -o output.txt
+      shell: bash
+    - run: |
+        git clone https://github.com/aqme/appsec-etl.git
+        pip3 install -U setuptools
+        pip3 install slackclient
+        cat output.txt
+        cat output.txt | python3 appsec-etl/transform/nuclei.py | python3 appsec-etl/load/toslack.py
       shell: bash
