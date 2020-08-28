@@ -17,6 +17,5 @@ runs:
 
   steps:
     - run: |
-        ls -la /home/runner/work/
-        echo $GITHUB_WORKSPACE
+        ls -la $GITHUB_WORKSPACE
       shell: bash
