@@ -15,12 +15,16 @@ inputs:
     required: true
     default: ${{ secrets.SLACK_CHANNEL_NUCLEI }}
 
+outputs:
+  random-number:
+    description: "Random number"
+    value: "42"
+
 runs:
   using: "composite"
   steps:
     - run: GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
       shell: bash
-
     - run: |
         $HOME/go/bin/nuclei -l ${{ inputs.urls-txt }} \
           -json \
@@ -33,7 +37,6 @@ runs:
           -t nuclei-templates/vulnerabilities/ \
           -o output.txt
       shell: bash
-
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
         pip3 install -U setuptools
