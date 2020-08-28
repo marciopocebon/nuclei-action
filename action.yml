@@ -32,8 +32,9 @@ runs:
       shell: bash
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
-        pip3 install slackclient
+        python --version
+        pip install slackclient
         export SLACK_TOKEN=${{ inputs.slack-token }}
         export SLACK_CHANNEL=${{ inputs.slack-channel }}
-        cat output.txt | python3 appsec-etl/transform/nuclei.py | python3 appsec-etl/load/toslack.py
+        cat output.txt | python appsec-etl/transform/nuclei.py | python appsec-etl/load/toslack.py
       shell: bash
