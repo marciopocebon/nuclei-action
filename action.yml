@@ -32,7 +32,6 @@ runs:
       shell: bash
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
-        pip3 install -U setuptools
         pip3 install slackclient
         export SLACK_TOKEN=${{ inputs.slack-token }}
         export SLACK_CHANNEL=${{ inputs.slack-channel }}
