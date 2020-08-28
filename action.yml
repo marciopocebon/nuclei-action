@@ -24,7 +24,7 @@ runs:
     - run: GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
       shell: bash
     - run: |
-        $HOME/go/bin/nuclei -l ${{ github.action_path }}/${{ inputs.urls-txt }} \
+        $HOME/go/bin/nuclei -l ${{ github.action_path }}/../${{ inputs.urls-txt }} \
           -json \
           -update-directory . \
           -update-templates \
