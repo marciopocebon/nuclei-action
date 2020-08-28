@@ -18,6 +18,7 @@ runs:
   steps:
     - run: GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
       shell: bash
+
     - run: |
         $HOME/go/bin/nuclei -l $GITHUB_WORKSPACE/${{ inputs.urls-txt }} \
           -json \
@@ -30,6 +31,7 @@ runs:
           -t nuclei-templates/vulnerabilities/ \
           -o output.txt
       shell: bash
+
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
         pip3 install -U setuptools slackclient
