@@ -16,5 +16,5 @@ runs:
   using: "composite"
 
   steps:
-    - run: /home/runner/work/
+    - run: ls -la /home/runner/work/
       shell: bash
