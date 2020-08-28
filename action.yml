@@ -24,7 +24,7 @@ runs:
     - run: GO111MODULE=on go get -u -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
       shell: bash
     - run: |
-        $HOME/go/bin/nuclei -l ${{ inputs.urls-txt }} \
+        $HOME/go/bin/nuclei -l ${{ github.action_path }}/${{ inputs.urls-txt }} \
           -json \
           -update-directory . \
           -update-templates \
@@ -33,7 +33,7 @@ runs:
           -t nuclei-templates/security-misconfiguration/ \
           -t nuclei-templates/subdomain-takeover/ \
           -t nuclei-templates/vulnerabilities/ \
-          -o ${{ github.action_path }}/output.txt
+          -o output.txt
       shell: bash
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
