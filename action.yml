@@ -21,6 +21,5 @@ runs:
   using: "composite"
   steps:
     - run: |
-        ls -la /home/runner/work/_temp_/
-        ls -la /home/runner/work/_temp_/_github_home/
+        cat ~/URLs.txt
       shell: bash
