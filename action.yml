@@ -16,5 +16,7 @@ runs:
   using: "composite"
 
   steps:
-    - run: ls -la /home/runner/work/
+    - run: |
+        ls -la /home/runner/work/
+        echo $GITHUB_WORKSPACE
       shell: bash
