@@ -1,1 +1,1 @@
-**GitHub Action for Nuclei.**
+**GitHub Action to run Nuclei scans.**
