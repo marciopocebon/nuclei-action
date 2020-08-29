@@ -1,1 +1,1 @@
-# nuclei-action
+**GitHub Action for Nuclei.**
