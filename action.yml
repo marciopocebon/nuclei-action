@@ -41,17 +41,14 @@ runs:
 
         if [ ${{ inputs.slack-token }} ]
         then
-          echo "OK"
-        else
-          echo "NOK"
+          pip3 install slackclient
+          cat output.txt | python3 transform/nuclei/toslack.py | python3 load/slack.py ${{ inputs.slack-token }} ${{ inputs.slack-channel }}
         fi
 
-        git clone https://github.com/aqme/appsec-etl.git
-        pip3 install -U setuptools
+        if [ ${{ inputs.dd-api-key }} ]
+        then
+          pip3 install requests
+          cat output.txt | python3 transform/nuclei/todatadog.py | python3 load/datadog.py ${{ inputs.dd-api-key }}
+        fi
 
-        pip3 install slackclient
-        cat output.txt | python3 transform/nuclei/toslack.py | python3 load/slack.py ${{ inputs.slack-token }} ${{ inputs.slack-channel }}
-
-        pip3 install requests
-        cat output.txt | python3 transform/nuclei/todatadog.py | python3 load/datadog.py ${{ inputs.dd-api-key }}
       shell: bash
