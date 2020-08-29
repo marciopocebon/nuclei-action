@@ -3,6 +3,9 @@
   <br>
 </h1>
 
+[Nuclei](https://github.com/projectdiscovery/nuclei) is an open-source web application security scanner developed by [ProjectDiscovery.io](https://twitter.com/pdiscoveryio).
+Its template engine empowers a community of cybersecurity researchers to keep up to date with the latest security exploits.
+
 ## Usage
 ```
 name: "Dynamic Application Security Testing (DAST) with Nuclei"
