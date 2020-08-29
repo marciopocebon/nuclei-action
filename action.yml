@@ -42,12 +42,12 @@ runs:
         if [ ${{ inputs.slack-token }} ]
         then
           pip3 install slackclient
-          cat output.txt | python3 transform/nuclei/toslack.py | python3 load/slack.py ${{ inputs.slack-token }} ${{ inputs.slack-channel }}
+          cat output.txt | python3 appsec-etl/transform/nuclei/toslack.py | python3 appsec-etl/load/slack.py ${{ inputs.slack-token }} ${{ inputs.slack-channel }}
         fi
 
         if [ ${{ inputs.dd-api-key }} ]
         then
           pip3 install requests
-          cat output.txt | python3 transform/nuclei/todatadog.py | python3 load/datadog.py ${{ inputs.dd-api-key }}
+          cat output.txt | python3 appsec-etl/transform/nuclei/todatadog.py | python3 appsec-etl/load/datadog.py ${{ inputs.dd-api-key }}
         fi
       shell: bash
