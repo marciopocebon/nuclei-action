@@ -50,5 +50,4 @@ runs:
           pip3 install requests
           cat output.txt | python3 transform/nuclei/todatadog.py | python3 load/datadog.py ${{ inputs.dd-api-key }}
         fi
-
       shell: bash
