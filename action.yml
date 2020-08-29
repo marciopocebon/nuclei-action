@@ -1,5 +1,5 @@
-name: "Nuclei Scanning - Action"
-description: ""
+name: "Dynamic Application Security Testing (DAST) with Nuclei"
+description: "Nuclei is an open-source web application security scanner developed by ProjectDiscovery.io."
 
 inputs:
   urls-txt:
