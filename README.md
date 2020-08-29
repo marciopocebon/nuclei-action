@@ -1,6 +1,11 @@
+<h1 align="left">
+  <img src="https://github.com/projectdiscovery/nuclei/blob/master/static/nuclei-logo.png" alt="nuclei" width="200px"></a>
+  <br>
+</h1>
+
 # Dynamic Application Security Testing (DAST) with Nuclei
 
-# Usage
+## Usage
 ```
 name: "Dynamic Application Security Testing (DAST) with Nuclei"
 
