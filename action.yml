@@ -1,6 +1,7 @@
 name: "Dynamic Application Security Testing (DAST) with Nuclei"
 description: "Nuclei is an open-source web application security scanner developed by ProjectDiscovery.io."
-color: "purple"
+branding:
+  color: "purple"
 
 inputs:
   urls-txt:
