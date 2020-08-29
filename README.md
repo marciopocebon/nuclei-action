@@ -3,8 +3,6 @@
   <br>
 </h1>
 
-# Dynamic Application Security Testing (DAST) with Nuclei
-
 ## Usage
 ```
 name: "Dynamic Application Security Testing (DAST) with Nuclei"
