@@ -47,7 +47,7 @@ runs:
 
         if [ ${{ inputs.dd-api-key }} ]
         then
-          pip3 install requests
+          pip3 install requests 1>/dev/null
           cat output.txt | python3 appsec-etl/transform/nuclei/todatadog.py | python3 appsec-etl/load/todatadog.py ${{ inputs.dd-api-key }}
         fi
       shell: bash
