@@ -37,11 +37,11 @@ runs:
 
     - run: |
         git clone https://github.com/aqme/appsec-etl.git
-        pip3 install setuptools --upgrade &2>/dev/null
+        pip3 install setuptools --upgrade 1>/dev/null
 
         if [ ${{ inputs.slack-token }} ]
         then
-          pip3 install slackclient &2>/dev/null
+          pip3 install slackclient 1>/dev/null
           cat output.txt | python3 appsec-etl/transform/nuclei/toslack.py | python3 appsec-etl/load/toslack.py ${{ inputs.slack-token }} ${{ inputs.slack-channel }}
         fi
 
